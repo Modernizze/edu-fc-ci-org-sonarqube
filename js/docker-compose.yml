@@ -1,0 +1,16 @@
+version: '3'
+services:  
+  node:
+    image: poncion/nodeapp:qs
+    container_name: node
+    restart: always
+    volumes:
+      - ./:/usr/src/app
+    networks:
+      - sonarnet
+    tty: true
+
+networks:
+  sonarnet:
+    driver: bridge
+    name: sonarnet
